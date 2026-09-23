@@ -1,0 +1,117 @@
+1. 	physical layer - packet transfer
+	data link layer	- becoming packet to frames 
+	network	- frames transfer
+	transport - sending the data
+	session	- establishing connection 
+	presentation - IDK
+	application - IDK
+
+2. 	TCP - transmission control protocol
+	UDP - unified datagram protocol
+	
+ 	tcp uses 3 way handshake ( syn - ack - syn-ack )
+	tcp is more secure and reliable
+	
+	udp is just direct broadcasting data to anyone who needs it
+	udp does not check weather the connection is established or not. 
+	
+	eg - tcp - messaging , mails , web connections
+	     UDP - match broadcasting on TV or OTT , radio , etc.
+
+3.  	ip address - internet protocol address
+ 	
+	public - the IP visible to everyone on public internet.
+		this IP is generally the ISP ip as our all data traffic goes from that route. 
+		this is this is something like - 162.192.87.14 ,etc
+
+	private - this is IP is the IP which is given to our device by router itself , like my current private ip is 192.168.1.8
+		this is the IP which is not visible on the public internet but just used to communicate inside the Network instead. 
+		by this IP you can send data between devices using protocols and tools , like Ncat , etc.
+
+4. 	MAC address - media access control (printed hardly on the NIC of the device) 
+			this works on the physical layer of OSI model. 
+			you can change it by any how. to change it you need to change the whole NIC card itself. 
+			its use to map IP address to the MAC address of the device using a ARP table and RARP table.
+
+5. 	Hub - send data to every device on network.
+	SWITCH - used to transfer data inside the network itself
+	router - Used to connect a network/device to the open internet.
+
+6. 	DHCP means dynamic host control protocol it is used to give dynamic consistent IPs to the newly added devices. 
+    when my PC gets connected to the router router assigns a Ip to my Pc for that local network itself so that if any device want to communicate with my PC they can communicate
+    range of only - 192.168.1.1 - 192.168.1.354
+
+7.  DNS - domain name system
+    used to map the server ip with the human readable domain name so that
+    when i search google.com the request go to the DNS and search for google.com it matches the IP then it goes to the IP and search for the file like index or any file which can show me the UI of the requested domain.
+    
+8.  NAt = netwrok address translation. IDK its use.
+
+
+
+
+
+
+medium
+
+9.  subnetting means to divide the network in smallet subnetworks so that you can create different sections in a single network itself.
+    192.168.1.0/26 - range = 192.168.1.1 - 192.168.1.249 (maybe I forgot how to do that stuff)
+
+10. means at 1st the SYN packet will go to the target to get the target know we are trying to establish a connection ,
+    2nd the target will send a ACK packet means it has recieved our packet and ready to accept connection and open its port to connect.
+    3rd SYN-ACK it will go from our side to tell the target lets connect and i have also recieved the packet of ACK which you sent.
+    
+11. HTTP - 80
+    HTTPS - 443
+    FTP - 23
+    SSH - 2220
+    DNS - IDK   
+    SMTP - IDK
+    RDP - IDK
+
+12. ARP means ADDESS RESOLUSION protocol
+    its a table that maps out logical address with physical address (ip to mac)
+    if someone just spoofed another device IP then table will get the data to that duplicated one and the original will not get the data.
+    basically it means to just change the IP or MAC address and duplicating it to get the data to your side than the original target.
+
+13. virtual LAN used to create sub divisions in the LAN network itself to get the work done without having more physical infrastructure. 
+    we have 3 deparment IT, HR, sales  we dont want that each dept can transfer the data from one to another. 
+    so we need more SWITCH to do that but with VLAn we can just create a VLAn to separate the whole thing without extra SWITCH or any other cost.
+
+14. - 
+15. PING is used to check weather the target device is ON or not. 
+    ICMP - IDK 
+    traceroute - IDK    
+
+16. Default gateway means IP address from which all our requests are getting transferred to the open Internet itself So let's say for example if 
+    we are having a local IP address of 192.168.1.56 so our  Defaultgateway will be 192.168.1.1. 
+    When we send a request to from our local machine to the open Internet our IP address will send the request to our default gateway our default gateway is the router itself so router will check the DNS from the DNS it will get the request and show us the output and this is how it is all done Local or private IP cannot be directly shown to the open Internet even if it is shown you cannot do anything with it as it is controlled by Network Address Translation so everyone will have that thing so you cannot do anything with our local IP or our private IP But you can do many more things with a public IP like if my public IP gets leaked then they can get my location they can get my There are more things that they can get.
+
+17. IDK 
+
+18. Man in the middle attack means like my computer is connected to my house router alright So what can happen is a device which can prove itself   
+    as a router for my machine like my laptop my laptop will sense that the other device is a router itself so it will try to connect to that device and if my end is connected to that device then that device will try to connect to my router itself So like that device will also try to portrait that it is a genuine device and want to connect to my router alright so if the if this kind of connections get successful then every request or everything that I am sending from my device to the open Internet it will be filtered or it will be going through the middle device which is the any device it can be it can be a laptop it can be a phone it can be a Raspberry Pi or something It will go through the middle device then it will go to the router itself And the problem with this is the middle device can manipulate my data or manipulate the things that I am trying to send to the other person or or like to the other direct Internet right it can be manipulated by the man sitting in the middle so this is why it is called the man sitting in the middle attack And I don't know anything about how we can perform that but I have just seen that it can be Monitored by wireshark packet tracer and all that stuff so.
+
+19. A port scan means that we are trying to check what are the ports open on the specific device of a specific IP A simple syn scan can be 
+    just sending a syn packet to the device or or to access all the ports that they are trying to access and it does not receive any acknowledgement or something we just send 1 syn from our device and check wheather we receive a ACK or not.
+    But if we can talk about the TCP scan it is a full three way handshake Like the whole connection is made and everything is done just to check whether the port is open or not the full 3 way handshake is done off TCP The syn scan is more stealthier rather than just a whole TCP scan.
+
+
+20. IDK
+
+21. Wireshark is a tool to just check whether what are the packets flowing through the whole network itself like if if my I am connected to my  
+    router and my TV is connected to my router my laptop is connected my phone is connected my family members devices are also connected with it so every request that is going through the router I can access I can analyze that that what are the IPS of the people who are transferring the data what are they searching what are they trying to do Although I can only see the target IP and the and the sender's IP but I cannot map out the whole thing with the with something as I cannot see that they are searching google.com or chrome.com or something any other YouTube or something I can just see the IP address for for which they are sending the request and I can see the scans or I can see the ports they are trying to access from the network itself.
+
+22. IDK
+
+23. DDOS attack means distributed Denial of service What it means is let's say if a server is able to handle 10,000 requests per minute then what I 
+    can do in DDOS attack is I can create a army of botnet I can make them target a single IP like the server itself I my department army will try to access the server at the same second or at the same point of time where all the others are trying to access it let's say if it is genuinely having 500 users at this point of time and if my botnet army I start my botnet army and I just tell them to target this server then it will send request and multiple request from different IPS from different names and all that so that the server gets overloaded and if someone is trying to genuinely accessing trying to genuinely access the server or genuinely access the service that it is providing or a website it will get down because the server is not able to handle that much amount of request it must be scaled enough so that it can handle the stuff or it can just be broken down so this is the distributed denial of service a denial of service attack is also there but it is done from a single IP so it can be easily blocked like if I do from my laptop my laptop will only have a single IP so I can use threading and all but the IP will be single itself so all the requests that will be coming or that will be going to the server it will be going from my alone IP so they can just block my IP and the DDOS or the dos attack will be finished or it can be stopped easily but DDO's is a bit hard to do that because the request is coming from random IPS or like genuine IPS they are not the fake one they are real devices but the thing is they are not knowing that they are sending the data to the server.
+
+24. IDS means Intrusion Detection System and IPS means Intrusion Prevention System detection system means like just to detect it and do nothing     
+    about it let's say if we are having 100 device in a network and few devices are trying to access some illegal stuff like **** or something so that what we can IDS will do is it will just red flag those devices and tell them the IT staff that this is happening and all that and the Intrusion Prevention system means that it will try to prevent that action further like if we if the staff is trying to access something illegal or something prohibited then it will try to tell up front that you cannot access it and it will try to reflect them also and try to block the access of the Internet itself from the network.
+
+25. A network level DNS poisoning attack mean Let's Say if Google is having AIP address of 123 alright 123 is the IP address of google in my DNS    
+    let's just take an example So what is DNS poisoning means that whenever I search google then my request will go to the IP address as 123 and it will find the files it will fetch all the details that I wanted to search and it will give the result but in DNS poisoning what it will do is whenever I whenever I search google.com what it will do is the IP address ofthegoogle.com will be changed to 346 So what will happen my whole request will be redirected 2346 instead of 123 So this is what DNS poisoning is request will not get blocked the request will not get any other harm but the only thing is the whatever I am searching it will go to another place rather than the place it should go So this is what DNS poisoning on on a local network level.
+
+
+    IDK means I dont know.
