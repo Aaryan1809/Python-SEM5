@@ -11,3 +11,5 @@ tuples
 
 shutil
 pathlib
+
+link for whole guide to install and use django - https://krupapathakmca.github.io/django-handout/
